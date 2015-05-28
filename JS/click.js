@@ -86,7 +86,7 @@ function initialisations()
 		GlobalNoGroupe= 0; //variable qui contien le numÃ©ro du groupe globalement.
 
 	}
-var table = new Array();
+
 var x_joueur = 0 ;
 var y_joueur = 0 ;
 function clic(x, y)
@@ -159,6 +159,7 @@ function clic(x, y)
 						{
 							coup_max_mem++; //pr savoir combien de coup il y a en tout dnas la partie. on l'augmente a chaque coup.
 						}
+                        
 						
 						//on supprime le coup en mÃ©moire, si il y en a un dans ce "coup". pr ensuite le remplacer ( permet de retourner dans la partie et de rejouer a un endroit si on veu reprendre)
 						for(i=0;i<21;i++)//on parcours sur x
@@ -189,7 +190,12 @@ function clic(x, y)
 					
 					else if(joueur==2)//si c'est au blanc de jouer.
 					{
-					
+                        
+			
+			var x= 1+Math.round(Math.random()*18); //position au hasard sur x
+			var y= 1+Math.round(Math.random()*18);//position au hasard sur y.
+			
+			
 						document.getElementById("idblanche"+x+"_"+y).style.opacity=1; //on affiche la pierre blanche a l'endroit clickÃ©
 						
 						joueur=1; //on change de joueur.
